@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17251f">
+  <meta name="description" content="An editorial overview of India's defence forces, strategic priorities, and indigenous capability." >
+  <title>India Defence | Strategic Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17251f;
+      --muted: #64716b;
+      --paper: #f2f1e9;
+      --white: #fbfaf6;
+      --line: #d9ddd4;
+      --saffron: #df7834;
+      --green: #26785f;
+      --blue: #456f85;
+      --lime: #c2d18b;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Manrope", "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .topline { height: 6px; background: linear-gradient(90deg, #e27b36 0 33.3%, #f8f6ef 33.3% 66.6%, #318265 66.6%); }
+    .shell { width: min(1160px, calc(100% - 64px)); margin: 0 auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .masthead { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; }
+    .brand-mark { width: 34px; height: 34px; border: 1px solid var(--ink); border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 17px; }
+    .brand-name { font-size: 11px; font-weight: 800; letter-spacing: 0; line-height: 1.25; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { font-size: 12px; font-weight: 700; text-decoration: none; color: #4d5b54; }
+    nav a:hover, nav a:focus-visible { color: var(--saffron); }
+    .edition { color: var(--muted); font-size: 10px; font-weight: 700; }
+
+    .hero { display: grid; grid-template-columns: 1.04fr .96fr; gap: 46px; padding: 68px 0 76px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); text-transform: uppercase; font-size: 10px; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: var(--saffron); }
+    h1 { margin: 18px 0 16px; max-width: 580px; font: 500 clamp(46px, 6vw, 76px)/.98 var(--serif); letter-spacing: 0; }
+    h1 span { color: var(--green); font-style: italic; }
+    .intro { max-width: 510px; color: #59665f; font-size: 15px; line-height: 1.8; }
+    .hero-meta { display: flex; align-items: center; gap: 14px; margin-top: 28px; color: var(--muted); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+    .hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--saffron); }
+
+    .visual { position: relative; min-height: 390px; overflow: hidden; background: #1a3028; color: #f6f4eb; isolation: isolate; }
+    .visual::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .35; background: repeating-linear-gradient(0deg, transparent 0 31px, #a5b5a335 32px), repeating-linear-gradient(90deg, transparent 0 31px, #a5b5a335 32px); }
+    .visual::after { content: ""; position: absolute; z-index: -1; width: 310px; height: 310px; border: 1px solid #a6c4a333; border-radius: 50%; left: 50%; top: 51%; transform: translate(-50%, -50%); box-shadow: 0 0 0 48px #a6c4a31a, 0 0 0 96px #a6c4a314, 0 0 0 144px #a6c4a30c; }
+    .visual-top { position: absolute; top: 20px; left: 22px; right: 22px; display: flex; justify-content: space-between; color: #c4d1c5; font-size: 9px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; }
+    .map-shape { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%) rotate(-8deg); width: 172px; height: 218px; background: linear-gradient(160deg, #e58b4d 4%, #eee9d7 47%, #66a27d 89%); clip-path: polygon(48% 0%, 59% 9%, 56% 18%, 68% 25%, 61% 35%, 74% 42%, 65% 52%, 70% 63%, 61% 70%, 59% 81%, 49% 100%, 41% 87%, 37% 76%, 25% 69%, 29% 59%, 18% 50%, 24% 40%, 16% 32%, 28% 23%, 26% 14%, 39% 11%); filter: drop-shadow(0 14px 24px #07120f88); opacity: .94; }
+    .sea-route { position: absolute; height: 1px; width: 290px; left: 50%; top: 53%; transform: translate(-50%, -50%) rotate(-29deg); background: linear-gradient(90deg, transparent, #c9d5b8aa, transparent); }
+    .pin { position: absolute; left: 59%; top: 48%; width: 8px; height: 8px; background: #f0a35d; border-radius: 50%; box-shadow: 0 0 0 6px #e9a66c33, 0 0 18px #efaa68; }
+    .visual-label { position: absolute; left: 22px; bottom: 20px; font: 18px/1.2 var(--serif); }
+    .visual-label small { display: block; margin-top: 6px; color: #c4d1c5; font: 9px var(--sans); text-transform: uppercase; }
+    .visual-key { position: absolute; right: 22px; bottom: 23px; display: grid; gap: 7px; color: #d1d8ce; font-size: 9px; }
+    .visual-key span { display: flex; align-items: center; gap: 7px; }
+    .key-dot { width: 6px; height: 6px; border-radius: 50%; background: #e58b4d; }
+
+    .strip { background: var(--white); border-block: 1px solid var(--line); }
+    .strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .strip-item { min-height: 108px; padding: 23px 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
+    .strip-item:first-child { padding-left: 0; }
+    .strip-item:last-child { border-right: 0; }
+    .strip-label { color: var(--muted); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .strip-value { margin-top: 8px; font: 19px var(--serif); }
+    .strip-note { margin-top: 4px; color: var(--muted); font-size: 10px; }
+
+    section.content { padding: 77px 0 80px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+    .section-kicker { color: var(--saffron); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    h2 { margin: 8px 0 0; font: 500 38px/1.1 var(--serif); letter-spacing: 0; }
+    .section-note { max-width: 350px; margin: 0 0 2px; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .branches { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .branch { min-height: 212px; padding: 25px 26px 26px 0; border-right: 1px solid var(--line); }
+    .branch + .branch { padding-left: 25px; }
+    .branch:last-child { border-right: 0; }
+    .branch-index { color: var(--saffron); font: italic 15px var(--serif); }
+    .branch h3 { margin: 20px 0 9px; font: 500 24px var(--serif); }
+    .branch p { max-width: 300px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+    .capabilities { background: #e5e7dc; padding: 66px 0 72px; }
+    .cap-grid { display: grid; grid-template-columns: .83fr 1.17fr; gap: 64px; }
+    .cap-copy h2 { max-width: 330px; }
+    .cap-copy p { max-width: 360px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .cap-list { border-top: 1px solid #bdc5b9; }
+    .cap-row { display: grid; grid-template-columns: 36px 1fr auto; gap: 16px; align-items: center; padding: 17px 0; border-bottom: 1px solid #bdc5b9; }
+    .cap-num { color: var(--green); font: italic 13px var(--serif); }
+    .cap-row strong { font-size: 13px; font-weight: 700; }
+    .cap-row span:last-child { color: var(--muted); font-size: 10px; text-align: right; }
+
+    .bottom { padding: 45px 0 30px; }
+    .bottom-inner { display: flex; justify-content: space-between; gap: 30px; align-items: start; padding-bottom: 27px; border-bottom: 1px solid var(--line); }
+    .bottom h2 { font-size: 27px; }
+    .source-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+    .source-links a { color: var(--green); font-size: 11px; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding-top: 17px; color: var(--muted); font-size: 9px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 36px, 560px); }
+      .masthead { min-height: 68px; }
+      nav { gap: 16px; }
+      nav a { font-size: 10px; }
+      .edition { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 30px; padding: 49px 0 55px; }
+      h1 { font-size: clamp(52px, 14vw, 72px); }
+      .intro { font-size: 14px; }
+      .visual { min-height: 330px; }
+      .strip-inner { grid-template-columns: 1fr; }
+      .strip-item, .strip-item:first-child { min-height: 82px; padding: 15px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .strip-item:last-child { border-bottom: 0; }
+      .strip-value { font-size: 17px; }
+      section.content { padding: 57px 0; }
+      .section-head { display: block; }
+      .section-note { margin-top: 14px; }
+      h2 { font-size: 33px; }
+      .branches { grid-template-columns: 1fr; }
+      .branch, .branch + .branch { min-height: 0; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .branch:last-child { border-bottom: 0; }
+      .branch h3 { margin: 12px 0 7px; }
+      .capabilities { padding: 52px 0; }
+      .cap-grid { grid-template-columns: 1fr; gap: 25px; }
+      .cap-copy h2 { max-width: 100%; }
+      .bottom-inner { display: block; }
+      .source-links { margin-top: 22px; }
+    }
+    @media (max-width: 390px) {
+      .shell { width: calc(100% - 28px); }
+      nav { gap: 11px; }
+      nav a { font-size: 9px; }
+      .visual-key { right: 14px; }
+      .visual-label { left: 14px; }
+      .cap-row { grid-template-columns: 26px 1fr; gap: 10px; }
+      .cap-row span:last-child { grid-column: 2; text-align: left; margin-top: -7px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <div class="shell masthead">
+      <a class="brand" href="#top" aria-label="India Defence home">
+        <span class="brand-mark" aria-hidden="true">I</span>
+        <span class="brand-name">INDIA<br>DEFENCE</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#forces">The forces</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#sources">Sources</a>
+      </nav>
+      <span class="edition">STRATEGIC BRIEF &nbsp; / &nbsp; 01</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="shell hero">
+      <div>
+        <div class="eyebrow">A strategic overview</div>
+        <h1>India's defence.<br><span>Built for range.</span></h1>
+        <p class="intro">A continental force with an increasingly maritime outlook, India's defence posture spans border security, deterrence, and the protection of vital sea lanes across the Indian Ocean.</p>
+        <div class="hero-meta"><span>South Asia</span><span class="dot" aria-hidden="true"></span><span>Indian Ocean region</span></div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="visual-top"><span>Regional field</span><span>01 / 03</span></div>
+        <div class="sea-route" aria-hidden="true"></div>
+        <div class="map-shape" aria-hidden="true"></div>
+        <div class="pin" aria-hidden="true"></div>
+        <div class="visual-label">A pivotal geography<small>From the Himalaya to open water</small></div>
+        <div class="visual-key"><span><i class="key-dot"></i> India</span><span>Indian Ocean</span></div>
+      </div>
+    </div>
+
+    <div class="strip" aria-label="Defence profile">
+      <div class="shell strip-inner">
+        <div class="strip-item"><span class="strip-label">Force structure</span><span class="strip-value">Army · Navy · Air Force</span><span class="strip-note">Three services, one joint security picture</span></div>
+        <div class="strip-item"><span class="strip-label">Strategic focus</span><span class="strip-value">Land, air &amp; maritime</span><span class="strip-note">A multi-domain operating environment</span></div>
+        <div class="strip-item"><span class="strip-label">Long-term direction</span><span class="strip-value">Readiness &amp; self-reliance</span><span class="strip-note">Modernisation alongside domestic industry</span></div>
+      </div>
+    </div>
+
+    <section class="content" id="forces">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="section-kicker">01 / The services</div><h2>Three services. One posture.</h2></div>
+          <p class="section-note">Each service brings a distinct role to national defence, supported by specialised commands and an expanding emphasis on coordination.</p>
+        </div>
+        <div class="branches">
+          <article class="branch"><span class="branch-index">01</span><h3>Indian Army</h3><p>Responsible for land-based operations and the defence of India's extensive borders, including demanding high-altitude terrain.</p></article>
+          <article class="branch"><span class="branch-index">02</span><h3>Indian Navy</h3><p>Safeguards maritime interests, supports presence across the Indian Ocean, and helps keep critical sea routes secure.</p></article>
+          <article class="branch"><span class="branch-index">03</span><h3>Indian Air Force</h3><p>Provides air defence and air power, with a central role in surveillance, mobility, and support across theatres.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities" id="capabilities">
+      <div class="shell cap-grid">
+        <div class="cap-copy"><div class="section-kicker">02 / Capability in motion</div><h2>Strengthening the foundation at home.</h2><p>India is investing in domestic design and production while modernising equipment and improving the way its forces operate together. These programmes illustrate that direction; they are not a complete inventory.</p></div>
+        <div class="cap-list" aria-label="Selected Indian defence programmes">
+          <div class="cap-row"><span class="cap-num">A</span><strong>Tejas light combat aircraft</strong><span>Indigenous aerospace</span></div>
+          <div class="cap-row"><span class="cap-num">B</span><strong>INS Vikrant aircraft carrier</strong><span>Indigenous shipbuilding</span></div>
+          <div class="cap-row"><span class="cap-num">C</span><strong>Akash air-defence system</strong><span>Domestic missile programme</span></div>
+          <div class="cap-row"><span class="cap-num">D</span><strong>Arjun main battle tank</strong><span>Land-systems development</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom" id="sources">
+      <div class="shell bottom-inner">
+        <div><div class="section-kicker">Further reading</div><h2>Follow the official record.</h2></div>
+        <div class="source-links">
+          <a href="https://mod.gov.in/" target="_blank" rel="noreferrer">Ministry of Defence ↗</a>
+          <a href="https://www.drdo.gov.in/" target="_blank" rel="noreferrer">DRDO ↗</a>
+          <a href="https://pib.gov.in/" target="_blank" rel="noreferrer">Press Information Bureau ↗</a>
+        </div>
+      </div>
+      <footer class="shell"><span>INDIA DEFENCE &nbsp; / &nbsp; FIELD NOTES</span><span>Overview only. Programme status and operational details change over time.</span></footer>
+    </section>
+  </main>
+</body>
+</html>
