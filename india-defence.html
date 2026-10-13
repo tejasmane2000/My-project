@@ -78,6 +78,18 @@
     .strip-value { margin-top: 8px; font: 19px var(--serif); }
     .strip-note { margin-top: 4px; color: var(--muted); font-size: 10px; }
 
+    .reader-checkin { padding: 34px 0; background: #e8e9df; border-bottom: 1px solid var(--line); }
+    .reader-inner { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+    .reader-copy h2 { margin-top: 7px; font-size: 27px; }
+    .reader-copy p { margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .reader-fields { display: grid; grid-template-columns: 1fr 140px auto; gap: 12px; align-items: end; }
+    .reader-fields label { display: grid; gap: 7px; color: var(--muted); font-size: 10px; font-weight: 800; }
+    .reader-fields input { width: 100%; height: 42px; padding: 0 11px; border: 1px solid #c6ccc1; border-radius: 0; background: var(--white); color: var(--ink); font: 12px var(--sans); }
+    .reader-fields input:focus-visible, .reader-fields button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    .reader-fields button { height: 42px; padding: 0 17px; border: 0; background: var(--ink); color: var(--white); font: 700 11px var(--sans); cursor: pointer; white-space: nowrap; }
+    .reader-fields button:hover { background: var(--green); }
+    .reader-message { min-height: 16px; margin: 9px 0 0; color: var(--green); font-size: 11px; font-weight: 700; }
+
     section.content { padding: 77px 0 80px; }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
     .section-kicker { color: var(--saffron); font-size: 10px; font-weight: 800; text-transform: uppercase; }
@@ -122,6 +134,9 @@
       .strip-item, .strip-item:first-child { min-height: 82px; padding: 15px 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .strip-item:last-child { border-bottom: 0; }
       .strip-value { font-size: 17px; }
+      .reader-inner { grid-template-columns: 1fr; gap: 18px; }
+      .reader-fields { grid-template-columns: 1fr 120px; }
+      .reader-fields button { grid-column: 1 / -1; }
       section.content { padding: 57px 0; }
       .section-head { display: block; }
       .section-note { margin-top: 14px; }
@@ -144,6 +159,8 @@
       .visual-label { left: 14px; }
       .cap-row { grid-template-columns: 26px 1fr; gap: 10px; }
       .cap-row span:last-child { grid-column: 2; text-align: left; margin-top: -7px; }
+      .reader-fields { grid-template-columns: 1fr; }
+      .reader-fields button { grid-column: auto; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -191,6 +208,28 @@
       </div>
     </div>
 
+    <section class="reader-checkin" aria-labelledby="reader-title">
+      <div class="shell reader-inner">
+        <div class="reader-copy">
+          <div class="section-kicker">Reader check-in</div>
+          <h2 id="reader-title">Make this brief yours.</h2>
+          <p>Your details are used only for the on-page greeting and are not saved.</p>
+        </div>
+        <form id="reader-form">
+          <div class="reader-fields">
+            <label for="reader-name">Name
+              <input id="reader-name" name="name" type="text" autocomplete="name" maxlength="80" required>
+            </label>
+            <label for="reader-age">Age
+              <input id="reader-age" name="age" type="number" inputmode="numeric" min="1" max="120" required>
+            </label>
+            <button type="submit">Continue &rarr;</button>
+          </div>
+          <p class="reader-message" id="reader-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
     <section class="content" id="forces">
       <div class="shell">
         <div class="section-head">
@@ -229,5 +268,17 @@
       <footer class="shell"><span>INDIA DEFENCE &nbsp; / &nbsp; FIELD NOTES</span><span>Overview only. Programme status and operational details change over time.</span></footer>
     </section>
   </main>
+  <script>
+    const readerForm = document.querySelector("#reader-form");
+    const readerMessage = document.querySelector("#reader-message");
+
+    readerForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(readerForm);
+      const name = formData.get("name").trim();
+      const age = formData.get("age");
+      readerMessage.textContent = `${name}, age ${age}: your India defence brief is ready.`;
+    });
+  </script>
 </body>
 </html>
